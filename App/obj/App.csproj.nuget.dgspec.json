@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj": {}
+    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj": {
+    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj",
+        "projectUniqueName": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj",
+        "projectPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj",
         "packagesPath": "C:\\Users\\amber\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\obj\\",
+        "outputPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amber\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,7 +44,17 @@
               "target": "Package",
               "version": "[5.0.7, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.7, )"
             },

@@ -9,7 +9,7 @@ namespace Api.Interfaces
     {
         Task AddAsync(Student student);
         Task<IEnumerable<Student>> GetStudentsAsync();
-        Task<Student> GetStudentByPersonalNoAsync(string personalNo);
+        Task<Student> GetStudentByEmailAsync(string email);
         Task<Student> GetStudentByIdAsync(int id);
         Task<Student> GetLastNameAsync(string LastName);
         void Update(Student student);

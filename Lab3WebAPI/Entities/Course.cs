@@ -17,6 +17,6 @@ namespace Api.Entities
 
         //Foreign key constraint
         [ForeignKey("StudentId")]
-        public virtual Student PersonalNumber { get; set; }
+        public virtual Student Id { get; set; }
     }
 }

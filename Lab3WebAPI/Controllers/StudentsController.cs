@@ -71,12 +71,12 @@ namespace Api.Controllers
       }
     }
 
-    [HttpGet("find/{personalno}")]
-    public async Task<IActionResult> GetStudentByPersonalNo(string personalno)
+    [HttpGet("find/{email}")]
+    public async Task<IActionResult> GetStudentByEmail(string email)
     {
       try
       {
-        var student = await _studentrepo.GetStudentByPersonalNoAsync(personalno);
+        var student = await _studentrepo.GetStudentByEmailAsync(email);
 
         if (student == null) return NotFound();
 
