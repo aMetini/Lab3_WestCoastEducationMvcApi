@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "Course Registration";
+}
+
+@model App.ViewModels.RegisterCourseViewModel
+
+@* Steg 2. *@
+<h1>Register for your course now!</h1>
+
+@Html.ValidationSummary()
+
+@* Steg 4. Create a form *@
+<form asp-controller="Courses" asp-action="Create" method="POST">
+    <div class="card">
+        <div class="card-header">
+            <h4>Register for new classes</h4>
+        </div>
+        <div class="card-body p-3">
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseNumber"></label>
+                <input class="form-control" asp-for="CourseNumber" />
+                <span asp-validation-for="CourseNumber"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Title"></label>
+                <input class=form-control asp-for="Title" />
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Description"></label>
+                <input class=form-control asp-for="Description" />
+                <span asp-validation-for="Description"></span>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" asp-for="Length"></label>
+                <input class=form-control asp-for="Length" />
+                <span asp-validation-for="Length"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Category"></label>
+                <input class=form-control asp-for="Category" />
+                <span asp-validation-for="Category"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseLevel"></label>
+                <input class=form-control asp-for="CourseLevel" />
+                <span asp-validation-for="CourseLevel"></span>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" asp-for="Price"></label>
+                <input class=form-control asp-for="Price" />
+                <span asp-validation-for="Price"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Status"></label>
+                <input class=form-control asp-for="Status" />
+                <span asp-validation-for="Status"></span>
+            </div>
+            <button id="save" type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</form>
+
+<script> 
+    @* $(() => {
+        $('#Length').datepicker();
+
+        $('save').click((e) => {
+        e.preventDefault();
+        console.log('Click successful!');
+
+        let courseNumberField = $('#courseNo').val();
+        console.log(regNumberField);
+        $('#Title').css('background-color', 'red');
+        $('#Description').addClass('dummyError');
+
+        });
+        
+        }); *@
+</script>
+    

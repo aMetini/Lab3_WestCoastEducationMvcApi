@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OujF+g1+jQAoA8wwTu1B4HGcVOkuOgX/MV/DLfd/nVQV14K2mJ+CF3+397Dp1C3tH43luJFS0csrJHQhLl1yeQ==",
+  "dgSpecHash": "LOSfem1QFi8ThvXQ8+HOG/zu31Hh/YxgeU3m9vg+RNUanHOHDYvVvSneEjCmuMz/8CgVBs/4Yzg8txmHTmbc2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
+  "projectFilePath": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amber\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\amber\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

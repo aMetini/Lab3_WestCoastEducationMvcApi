@@ -5130,6 +5130,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.7",
+      "Microsoft.EntityFrameworkCore.Sqlite.Core >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Tools.DotNet >= 2.0.3",
       "Microsoft.EntityFrameworkCore.tools >= 5.0.7",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -5141,11 +5142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
+      "projectUniqueName": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
       "projectName": "Lab3WebAPI",
-      "projectPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
+      "projectPath": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
       "packagesPath": "C:\\Users\\amber\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\obj\\",
+      "outputPath": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amber\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5155,7 +5156,6 @@
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5185,6 +5185,10 @@
             "version": "[5.0.7, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
+            "target": "Package",
+            "version": "[5.0.7, )"
+          },
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": {
             "target": "Package",
             "version": "[5.0.7, )"
           },
@@ -5221,7 +5225,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
