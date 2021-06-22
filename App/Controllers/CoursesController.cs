@@ -24,7 +24,6 @@ namespace App.Controllers
     [HttpGet()]
     public async Task<IActionResult> Index()
     {
-      ViewBag.message = "Här är lite extra bra erbjudande vecka 18!";
       var result = await _service.GetCoursesAsync();
       return View("Index", result);
     }

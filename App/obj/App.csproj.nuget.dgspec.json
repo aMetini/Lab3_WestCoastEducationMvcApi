@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj": {}
+    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj": {
+    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj",
+        "projectUniqueName": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\App.csproj",
+        "projectPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj",
         "packagesPath": "C:\\Users\\amber\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\App\\obj\\",
+        "outputPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amber\\AppData\\Roaming\\NuGet\\NuGet.Config",
