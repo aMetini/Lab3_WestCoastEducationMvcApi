@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj": {}
+    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj": {}
   },
   "projects": {
-    "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj": {
+    "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
         "projectName": "Lab3WebAPI",
-        "projectPath": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
+        "projectPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\Lab3WebAPI.csproj",
         "packagesPath": "C:\\Users\\amber\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\Lab3WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amber\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,6 +21,7 @@
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,16 +55,6 @@
               "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite.Core": {
-              "target": "Package",
-              "version": "[5.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
-              "target": "Package",
-              "version": "[2.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
             },

@@ -11,7 +11,6 @@ namespace Api.Interfaces
         Task<IEnumerable<Course>> GetCoursesAsync();
         Task<Course> GetCourseByCourseNoAsync(string courseNo);
         Task<Course> GetCourseByIdAsync(int id);
-        Task<Course> GetTitleAsync(string title);
         void Update(Course course);
         void Delete(Course course);
         Task<bool> SaveAllChangesAsync();

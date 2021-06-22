@@ -11,7 +11,6 @@ namespace Api.Interfaces
         Task<IEnumerable<Student>> GetStudentsAsync();
         Task<Student> GetStudentByEmailAsync(string email);
         Task<Student> GetStudentByIdAsync(int id);
-        Task<Student> GetLastNameAsync(string LastName);
         void Update(Student student);
         void Delete(Student student);
         Task<bool> SaveAllChangesAsync();

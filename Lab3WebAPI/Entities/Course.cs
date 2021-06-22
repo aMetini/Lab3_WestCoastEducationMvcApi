@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace Api.Entities
 {
@@ -15,8 +15,6 @@ namespace Api.Entities
         public int Price { get; set; }
         public string Status { get; set; }
 
-        //Foreign key constraint
-        [ForeignKey("StudentId")]
-        public virtual Student Id { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

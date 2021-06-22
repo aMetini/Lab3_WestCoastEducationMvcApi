@@ -106,10 +106,6 @@ namespace Api.Controllers
       try
       {
 
-        var LastName = await _studentrepo.GetLastNameAsync(model.LastName);
-
-        if (LastName == null) return NotFound("Could not find student with last name: " + model.LastName);
-
         var student = new Student
         {
           FirstName = model.FirstName,
@@ -151,11 +147,11 @@ namespace Api.Controllers
     }
 
     [HttpDelete("{personalNo}")]
-    public async Task<IActionResult> DeleteStudent(string personalNo)
+    public async Task<IActionResult> DeleteStudent(int personalNo)
     {
       try
       {
-        var student = await _studentrepo.GetStudentByPersonalNoAsync(personalNo);
+        var student = await _studentrepo.GetStudentByIdAsync(personalNo);
         if (student == null) return NotFound();
 
         _studentrepo.Delete(student);

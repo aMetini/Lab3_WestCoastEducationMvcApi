@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Add new student";
+}
+
+@model App.ViewModels.RegisterStudentViewModel
+
+<h1>Register as a new student here!</h1>
+
+@Html.ValidationSummary()
+
+<form asp-controller="Students" asp-action="Create" method="Post">
+    <div class="card">
+        <div class="card-header">
+            <h4>Add a new student</h4>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="FirstName"></label>
+            <input class="form-control" asp-for="FirstName">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="LastName"></label>
+            <input class="form-control" asp-for="LastName">
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Email"></label>
+            <input class="form-control" asp-for="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="MobileNumber"></label>
+            <input class="form-control" asp-for="MobileNumber">
+            <span asp-validation-for="MobileNumber"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="AddressInformation"></label>
+            <input class="form-control" asp-for="AddressInformation">
+            <span asp-validation-for="AddressInformation"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="PersonalNumber"></label>
+            <input class="form-control" asp-for="PersonalNumber">
+            <span asp-validation-for="PersonalNumber"></span>
+        </div>
+        <button id="save" type="submit" class="btn btn-primary">Add Student and Save</button>
+    </div>
+</form>
+
+

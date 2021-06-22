@@ -1,7 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Api.Data;
+using Api.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,14 +9,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lab3WebAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public readonly IConfiguration _config;
+        public Startup(IConfiguration config)
         {
-            Configuration = configuration;
+            _config = config;
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +26,14 @@ namespace Lab3WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+            });
+
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<ICourseTitleRepository, CourseTitleRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
