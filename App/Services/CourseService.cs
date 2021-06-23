@@ -20,7 +20,7 @@ namespace App.Services
     public CourseService(IConfiguration config, HttpClient http)
     {
       _http = http;
-      _baseUrl = config.GetSection("api:baseUrl").Value + "courses";
+      _baseUrl = config.GetSection("api:baseUrl").Value + "/courses";
 
       _options = new JsonSerializerOptions
       {
@@ -120,6 +120,7 @@ namespace App.Services
       }
       else
       {
+        //Console.Write("response => " + response.toString());
         throw new Exception("Unable to process your request!");
       }
     }

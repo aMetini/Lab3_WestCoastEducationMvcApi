@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using App.Interfaces;
 
 namespace App.Interfaces
 {
@@ -6,6 +7,7 @@ namespace App.Interfaces
     {
         ICourseRepository CourseRepository { get; }
         IStudentRepository StudentRepository { get; }
+        ICourseTitleRepository CourseTitleRepository { get; }
         Task<bool> Complete();
         bool HasChanges();
     }

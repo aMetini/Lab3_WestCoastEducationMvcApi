@@ -44,9 +44,9 @@ namespace App.Controllers
                 FirstName = data.FirstName,
                 LastName = data.LastName,
                 Email = data.Email,
-                MobileNumber = data.MobileNumber,
+                MobileNumber = (string)data.MobileNumber,
                 AddressInformation = data.AddressInformation,
-                PersonalNumber = data.PersonalNumber
+                PersonalNumber = (string)data.PersonalNumber
             };
             try
             {

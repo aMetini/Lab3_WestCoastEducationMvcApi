@@ -20,7 +20,7 @@ namespace App.Services
     public StudentService(IConfiguration config, HttpClient http)
     {
       _http = http;
-      _baseUrl = config.GetSection("api:baseUrl").Value + "students";
+      _baseUrl = config.GetSection("api:baseUrl").Value + "/students";
 
       _options = new JsonSerializerOptions
       {

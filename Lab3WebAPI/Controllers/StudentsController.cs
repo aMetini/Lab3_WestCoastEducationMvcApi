@@ -35,9 +35,9 @@ namespace Api.Controllers
           FirstName = s.FirstName,
           LastName = s.LastName,
           Email = s.Email,
-          MobileNumber = s.MobileNumber,
+          MobileNumber = (string)s.MobileNumber,
           AddressInformation = s.AddressInformation,
-          PersonalNumber = s.PersonalNumber
+          PersonalNumber = (string)s.PersonalNumber
         });
       }
       return Ok(students);
@@ -58,9 +58,9 @@ namespace Api.Controllers
           FirstName = student.FirstName,
           LastName = student.LastName,
           Email = student.Email,
-          MobileNumber = student.MobileNumber,
+          MobileNumber = (string)student.MobileNumber,
           AddressInformation = student.AddressInformation,
-          PersonalNumber = student.PersonalNumber
+          PersonalNumber = (string)student.PersonalNumber
         };
 
         return Ok(model);
@@ -86,9 +86,9 @@ namespace Api.Controllers
           FirstName = student.FirstName,
           LastName = student.LastName,
           Email = student.Email,
-          MobileNumber = student.MobileNumber,
+          MobileNumber = (string)student.MobileNumber,
           AddressInformation = student.AddressInformation,
-          PersonalNumber = student.PersonalNumber
+          PersonalNumber = (string)student.PersonalNumber
         };
 
         return Ok(model);
@@ -111,9 +111,9 @@ namespace Api.Controllers
           FirstName = model.FirstName,
           LastName = model.LastName,
           Email = model.Email,
-          MobileNumber = model.MobileNumber,
+          MobileNumber = (string)model.MobileNumber,
           AddressInformation = model.AddressInformation,
-          PersonalNumber = model.PersonalNumber
+          PersonalNumber = (string)model.PersonalNumber
         };
         await _studentrepo.AddAsync(student);
 
@@ -136,9 +136,9 @@ namespace Api.Controllers
       student.Email = student.Email;
       student.FirstName = student.FirstName;
       student.LastName = student.LastName;
-      student.MobileNumber = model.MobileNumber;
+      student.MobileNumber = (string)model.MobileNumber;
       student.AddressInformation = student.AddressInformation;
-      student.PersonalNumber = model.PersonalNumber;
+      student.PersonalNumber = (string)model.PersonalNumber;
 
       _studentrepo.Update(student);
       var result = await _studentrepo.SaveAllChangesAsync();

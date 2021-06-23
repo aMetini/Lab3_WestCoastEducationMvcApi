@@ -9,7 +9,7 @@ namespace App.ViewModels
     public int Length { get; set; }
     public string Category { get; set; }
     public string CourseLevel { get; set; }
-    public int Price { get; set; }
+    public decimal Price { get; set; }
     public string Status { get; set; }
   }
 }

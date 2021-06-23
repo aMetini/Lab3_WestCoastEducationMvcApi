@@ -12,10 +12,10 @@ namespace App.ViewModels
     [Display(Name = "Email")]
     public string Email { get; set; }
     [Display(Name = "Mobile Number")]
-    public int MobileNumber { get; set; }
+    public string MobileNumber { get; set; }
     [Display(Name = "Address Information")]
     public string AddressInformation { get; set; }
     [Display(Name = "Personal Number")]
-    public int PersonalNumber { get; set; }
+    public string PersonalNumber { get; set; }
   }
 }

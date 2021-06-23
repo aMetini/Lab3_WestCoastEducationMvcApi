@@ -23,7 +23,7 @@ namespace App.ViewModels
     public string CourseLevel { get; set; }
     [Display(Name = "Price")]
     [Required(ErrorMessage = "Course price must be indicated!")]
-    public int Price { get; set; }
+    public decimal Price { get; set; }
     [Display(Name = "Course Status")]
     public string Status { get; set; }
 

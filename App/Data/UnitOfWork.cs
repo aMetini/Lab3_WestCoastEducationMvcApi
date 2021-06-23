@@ -15,6 +15,8 @@ namespace App.Data
 
     public IStudentRepository StudentRepository => new StudentRepository(_context);
 
+    public ICourseTitleRepository CourseTitleRepository => new CourseTitleRepository(_context);
+
     public async Task<bool> Complete()
     {
       return await _context.SaveChangesAsync() > 0;

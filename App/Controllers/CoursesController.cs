@@ -24,15 +24,23 @@ namespace App.Controllers
     [HttpGet()]
     public async Task<IActionResult> Index()
     {
-      var result = await _service.GetCoursesAsync();
-      return View("Index", result);
+      try
+      {
+        var result = await _service.GetCoursesAsync();
+        return View("Index", result);
+      }
+      catch (System.Exception)
+      {
+        return View("Error", new ErrorViewModel()); 
+      }
+     
     }
 
     //Steg 1.
     [HttpGet]
     public async Task<IActionResult> Create()
     {
-      var list = await _unitOfWork.StudentRepository.GetStudentsAsync();
+      var list = await _unitOfWork.CourseTitleRepository.GetCourseTitlesAsync();
       return View("Create");
     }
 
