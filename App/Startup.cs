@@ -35,9 +35,9 @@ namespace App
             // Dependency Injection ...
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICourseService, CourseService>();
-            //services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IStudentService, StudentService>();
             services.AddHttpClient<ICourseService, CourseService>();
-            //services.AddHttpClient<IStudentService, StudentService>();
+            services.AddHttpClient<IStudentService, StudentService>();
 
             services.AddControllersWithViews();
         }
