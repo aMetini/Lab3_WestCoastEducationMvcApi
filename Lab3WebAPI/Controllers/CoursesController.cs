@@ -13,11 +13,11 @@ namespace Api.Controllers
   public class CoursesController : ControllerBase
   {
     private readonly ICourseRepository _repo;
-    private readonly ICourseTitleRepository _titlerepo;
-    public CoursesController(ICourseRepository repo, ICourseTitleRepository titlerepo)
+    //private readonly ICourseTitleRepository _titlerepo;
+    public CoursesController(ICourseRepository repo /*ICourseTitleRepository titlerepo*/)
     {
       _repo = repo;
-      _titlerepo = titlerepo;
+      //_titlerepo = titlerepo;
     }
 
     [HttpGet()]
@@ -116,10 +116,10 @@ namespace Api.Controllers
     {
       try
       {
-
+/*
         var title = await _titlerepo.GetTitleAsync(model.Title);
 
-        if (title == null) return NotFound("Could not find course with course title: " + model.Title);
+        if (title == null) return NotFound("Could not find course with course title: " + model.Title);*/
 
         var course = new Course
         {

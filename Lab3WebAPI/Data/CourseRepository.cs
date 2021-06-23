@@ -27,12 +27,12 @@ namespace Api.Data
 
     public async Task<Course> GetCourseByIdAsync(int id)
     {
-      return await _context.Courses.Include(c => c.Title).SingleOrDefaultAsync(c => c.Id == id);
+      return await _context.Courses./*Include(c => c.Title).*/FindAsync(id);
     }
 
     public async Task<Course> GetCourseByCourseNoAsync(string courseNo)
     {
-      var course = await _context.Courses.Include(c => c.Title).SingleOrDefaultAsync(
+      var course = await _context.Courses/*.Include(c => c.Title)*/.SingleOrDefaultAsync(
           c => c.CourseNumber.ToUpper() == courseNo.ToUpper());
 
       return course;
@@ -40,7 +40,7 @@ namespace Api.Data
 
     public async Task<IEnumerable<Course>> GetCoursesAsync()
     {
-      return await _context.Courses.Include(c => c.Title).ToListAsync();
+      return await _context.Courses /*.Include(c => c.Title)*/.ToListAsync();
     }
 
     public async Task<bool> SaveAllChangesAsync()

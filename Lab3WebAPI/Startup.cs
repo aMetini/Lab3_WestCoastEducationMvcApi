@@ -33,7 +33,7 @@ namespace Lab3WebAPI
 
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
-            services.AddScoped<ICourseTitleRepository, CourseTitleRepository>();
+            //services.AddScoped<ICourseTitleRepository, CourseTitleRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

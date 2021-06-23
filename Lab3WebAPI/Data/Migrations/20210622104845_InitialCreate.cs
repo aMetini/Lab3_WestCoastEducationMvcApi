@@ -7,19 +7,6 @@ namespace Lab3WebAPI.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CourseTitles",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CourseTitles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Courses",
                 columns: table => new
                 {
@@ -33,18 +20,11 @@ namespace Lab3WebAPI.Data.Migrations
                     Category = table.Column<string>(type: "TEXT", nullable: true),
                     CourseLevel = table.Column<string>(type: "TEXT", nullable: true),
                     Price = table.Column<int>(type: "INTEGER", nullable: false),
-                    Status = table.Column<string>(type: "TEXT", nullable: true),
-                    CourseTitleId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Status = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Courses", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Courses_CourseTitles_CourseTitleId",
-                        column: x => x.CourseTitleId,
-                        principalTable: "CourseTitles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -73,11 +53,6 @@ namespace Lab3WebAPI.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Courses_CourseTitleId",
-                table: "Courses",
-                column: "CourseTitleId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Students_CourseId",
                 table: "Students",
                 column: "CourseId");
@@ -90,9 +65,6 @@ namespace Lab3WebAPI.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Courses");
-
-            migrationBuilder.DropTable(
-                name: "CourseTitles");
         }
     }
 }
