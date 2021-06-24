@@ -31,10 +31,12 @@
             <td>@item.CourseLevel</td>
             <td>@item.Price</td>
             <td>@item.Status</td>
-            <th style="text-align: center;"><a asp-action="Details" asp-route-courseNo="@item.CourseNumber"><i 
-                class="fal-fa-info-circle"></i></a></th>
-            <th style="text-align: center;"><a asp-action="Delete" asp-route-courseNo="@item.CourseNumber"><i 
-                class="fal-fa-trash-alt" style="color:red;"></i></a></th>
+            <td style="text-align: center;">
+              <a asp-action="Details" asp-route-id="@item.Id"><i class="fal fa-circle-info"></i></a>
+            </td>
+            <td style="text-align: center;">
+              <a asp-action="Delete" asp-route-id="@item.Id"><i class="fal-fa-trash-alt" style="color:red;"></i></a>
+            </td>
             </tr>
         }
     </tbody>

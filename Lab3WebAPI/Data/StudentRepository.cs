@@ -25,9 +25,9 @@ namespace Api.Data
       _context.Students.Remove(student);
     }
 
-    public async Task<Student> GetStudentByIdAsync(int id)
+    public async Task<Student> GetStudentByPersonalNumberAsync(string personalNo)
     {
-      return await _context.Students.Include(c => c.Course).SingleOrDefaultAsync(c => c.Id == id);
+      return await _context.Students.Include(c => c.Course).SingleOrDefaultAsync(c => c.PersonalNumber == personalNo);
     }
 
     public async Task<Student> GetStudentByEmailAsync(string studentEmail)

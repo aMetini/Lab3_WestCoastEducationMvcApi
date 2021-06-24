@@ -151,11 +151,12 @@ namespace Api.Controllers
 
       var course = await _repo.GetCourseByIdAsync(id);
 
-      course.CourseLevel = course.CourseLevel;
-      course.Status = course.Status;
-      course.Title = course.Title;
+      course.CourseNumber = model.CourseNumber;
+      course.CourseLevel = model.CourseLevel;
+      course.Status = model.Status;
+      course.Title = model.Title;
       course.Length = model.Length;
-      course.Description = course.Description;
+      course.Description = model.Description;
       course.Price = (decimal)model.Price;
 
       _repo.Update(course);

@@ -44,11 +44,11 @@ namespace Api.Controllers
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetStudentById(int id)
+    public async Task<IActionResult> GetStudentByPersonalNumber(string personalNo)
     {
       try
       {
-        var student = await _studentrepo.GetStudentByIdAsync(id);
+        var student = await _studentrepo.GetStudentByPersonalNumberAsync(personalNo);
 
         if (student == null) return NotFound();
 
@@ -128,17 +128,17 @@ namespace Api.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateStudent(int id, UpdateStudentViewModel model)
+    public async Task<IActionResult> UpdateStudent(string personalNo, UpdateStudentViewModel model)
     {
 
-      var student = await _studentrepo.GetStudentByIdAsync(id);
+      var student = await _studentrepo.GetStudentByPersonalNumberAsync(personalNo);
 
-      student.Email = student.Email;
-      student.FirstName = student.FirstName;
-      student.LastName = student.LastName;
-      student.MobileNumber = (string)model.MobileNumber;
-      student.AddressInformation = student.AddressInformation;
-      student.PersonalNumber = (string)model.PersonalNumber;
+      student.Email = model.Email;
+      student.FirstName = model.FirstName;
+      student.LastName = model.LastName;
+      student.MobileNumber = model.MobileNumber;
+      student.AddressInformation = model.AddressInformation;
+      student.PersonalNumber = model.PersonalNumber;
 
       _studentrepo.Update(student);
       var result = await _studentrepo.SaveAllChangesAsync();
@@ -147,11 +147,11 @@ namespace Api.Controllers
     }
 
     [HttpDelete("{personalNo}")]
-    public async Task<IActionResult> DeleteStudent(int personalNo)
+    public async Task<IActionResult> DeleteStudent(string personalNo)
     {
       try
       {
-        var student = await _studentrepo.GetStudentByIdAsync(personalNo);
+        var student = await _studentrepo.GetStudentByPersonalNumberAsync(personalNo);
         if (student == null) return NotFound();
 
         _studentrepo.Delete(student);
