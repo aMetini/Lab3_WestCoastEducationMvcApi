@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Linq;
 using App.Entities;
 using App.Interfaces;
 using App.Models;
@@ -21,11 +22,17 @@ namespace App.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Index()
-        {
-            var result = await _studentservice.GetStudentsAsync();
-            return View("Index", result);
-        }
+    public async Task<IActionResult> Index(string searchString)
+    {
+      var result = await _studentservice.GetStudentsAsync();
+
+      if(!string.IsNullOrEmpty(searchString))
+      {
+        var resultFiltered = result.Where(c => c.Email.Contains(searchString));
+        return View("Index", resultFiltered);
+      } 
+      return View("Index", result);
+    }
 
         [HttpGet()]
         public async Task<IActionResult> Create()
@@ -44,9 +51,9 @@ namespace App.Controllers
                 FirstName = data.FirstName,
                 LastName = data.LastName,
                 Email = data.Email,
-                MobileNumber = (string)data.MobileNumber,
+                MobileNumber = data.MobileNumber,
                 AddressInformation = data.AddressInformation,
-                PersonalNumber = (string)data.PersonalNumber
+                PersonalNumber = data.PersonalNumber
             };
             try
             {

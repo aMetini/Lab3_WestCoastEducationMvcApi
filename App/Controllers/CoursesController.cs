@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Linq;
 using App.Entities;
 using App.Interfaces;
 using App.Models;
@@ -22,18 +23,16 @@ namespace App.Controllers
 
     //Action metod...
     [HttpGet()]
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string searchString)
     {
-      try
+      var result = await _service.GetCoursesAsync();
+
+      if(!string.IsNullOrEmpty(searchString))
       {
-        var result = await _service.GetCoursesAsync();
-        return View("Index", result);
-      }
-      catch (System.Exception)
-      {
-        return View("Error", new ErrorViewModel()); 
-      }
-     
+        var resultFiltered = result.Where(c => c.CourseNumber.Contains(searchString));
+        return View("Index", resultFiltered);
+      } 
+      return View("Index", result);
     }
 
     //Steg 1.

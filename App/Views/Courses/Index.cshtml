@@ -1,4 +1,16 @@
 @model IEnumerable<App.Models.CourseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-controller="Courses" asp-action="Index" method="get">
+  <div class="form-actions no-color">
+    <p>
+      Search by Course No: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+      <input type="submit" value="SearchFilter" class="btn btn-primary" /> | <a asp-action="Index">Return to Course Catalogue</a>
+    </p>
+  </div>
+</form>
 
 <a asp-controller="Courses" asp-action="Create" class="btn btn-primary">Add new course</a>
 <hr>
@@ -14,6 +26,8 @@
        <th>Course Level</th>
        <th>Course Price</th>
        <th>Status</th>
+       <th></th>
+       <th></th>
      </tr>
     </thead>
     <tbody>
@@ -32,12 +46,12 @@
             <td>@item.Price</td>
             <td>@item.Status</td>
             <td style="text-align: center;">
-              <a asp-action="Details" asp-route-id="@item.Id"><i class="fal fa-circle-info"></i></a>
+              <a asp-action="Details" asp-route-id="@item.Id"><i class="fal fa-info-circle"></i></a>
             </td>
             <td style="text-align: center;">
-              <a asp-action="Delete" asp-route-id="@item.Id"><i class="fal-fa-trash-alt" style="color:red;"></i></a>
+              <a asp-action="Delete" asp-route-id="@item.Id"><i class="fal fa-trash-alt" style="color:red;"></i></a>
             </td>
-            </tr>
+          </tr>
         }
     </tbody>
     </table>

@@ -1,8 +1,17 @@
 @model IEnumerable<App.Models.StudentModel>
 
 @{
-    ViewData["Title"] = "Student";
+    ViewData["Title"] = "Index";
 }
+
+<form asp-controller="Students" asp-action="Index" method="get">
+  <div class="form-actions no-color">
+    <p>
+      Search by Student Email: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+      <input type="submit" value="SearchFilter" class="btn btn-primary" /> | <a asp-action="Index">Return to Student List</a>
+    </p>
+  </div>
+</form>
 
 <a asp-action="Create">Add a new student</a>
 <hr>
