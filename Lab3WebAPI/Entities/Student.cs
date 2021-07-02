@@ -1,4 +1,5 @@
-using System.ComponentModel.DataAnnotations.Schema;
+//using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 
 namespace Api.Entities
@@ -12,9 +13,10 @@ namespace Api.Entities
         public string MobileNumber { get; set; }
         public string AddressInformation { get; set; }
         public string PersonalNumber { get; set; }
-        public int CourseId { get; set; }
+        //public int CourseId { get; set; }
 
+/*
         [ForeignKey("CourseId")]
-        public virtual Course Course { get; set; }
+        public virtual Course CourseNumber { get; set; }*/
     }
 }

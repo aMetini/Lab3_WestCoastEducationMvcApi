@@ -27,12 +27,12 @@ namespace Api.Data
 
     public async Task<Student> GetStudentByPersonalNumberAsync(string personalNo)
     {
-      return await _context.Students.Include(c => c.Course).SingleOrDefaultAsync(c => c.PersonalNumber == personalNo);
+      return await _context.Students/*.Include(c => c.CourseNumber)*/.SingleOrDefaultAsync(c => c.PersonalNumber == personalNo);
     }
 
     public async Task<Student> GetStudentByEmailAsync(string studentEmail)
     {
-      var student = await _context.Students.Include(c => c.Course).SingleOrDefaultAsync(
+      var student = await _context.Students/*.Include(c => c.CourseNumber)*/.SingleOrDefaultAsync(
           c => c.Email.ToLower() == studentEmail.ToLower());
 
       return student;
@@ -40,7 +40,7 @@ namespace Api.Data
 
     public async Task<IEnumerable<Student>> GetStudentsAsync()
     {
-      return await _context.Students.Include(c => c.Course).ToListAsync();
+      return await _context.Students/*Include(c => c.CourseNumber)*/.ToListAsync();
     }
 
     public async Task<bool> SaveAllChangesAsync()

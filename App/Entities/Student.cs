@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace App.Entities
 {
     public class Student
@@ -9,6 +11,7 @@ namespace App.Entities
         public string MobileNumber { get; set; }
         public string AddressInformation { get; set; }
         public string PersonalNumber { get; set; }
+        //public ICollection<StudentCourse> StudentCourses { get; set; }
         
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace App.Entities
 {
     public class Course
@@ -12,5 +14,7 @@ namespace App.Entities
         public string CourseLevel { get; set; }
         public decimal Price { get; set; }
         public string Status { get; set; }
+        //public ICollection<StudentCourse> StudentCourses { get; set; }
+
     }
 }

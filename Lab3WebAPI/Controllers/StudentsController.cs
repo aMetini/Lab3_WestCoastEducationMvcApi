@@ -111,9 +111,9 @@ namespace Api.Controllers
           FirstName = model.FirstName,
           LastName = model.LastName,
           Email = model.Email,
-          MobileNumber = (string)model.MobileNumber,
+          MobileNumber = model.MobileNumber,
           AddressInformation = model.AddressInformation,
-          PersonalNumber = (string)model.PersonalNumber
+          PersonalNumber = model.PersonalNumber
         };
         await _studentrepo.AddAsync(student);
 
@@ -166,5 +166,3 @@ namespace Api.Controllers
     }
   }
 }
-
-    

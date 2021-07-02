@@ -130,7 +130,7 @@ namespace Api.Controllers
           ImageName = model.ImageName,
           Category = model.Category,
           CourseLevel = model.CourseLevel,
-          Price = (decimal)model.Price,
+          Price = model.Price,
           Status = model.Status
         };
         await _repo.AddAsync(course);
@@ -158,6 +158,7 @@ namespace Api.Controllers
       course.Length = model.Length;
       course.Description = model.Description;
       course.Price = (decimal)model.Price;
+      course.Category = model.Category;
 
       _repo.Update(course);
       var result = await _repo.SaveAllChangesAsync();

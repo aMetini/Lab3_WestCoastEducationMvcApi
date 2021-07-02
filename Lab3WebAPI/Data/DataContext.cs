@@ -10,16 +10,19 @@ namespace Api.Data
     //public DbSet<CourseTitle> CourseTitles { get; set; }
     //public DbSet<StudentCourse> StudentCourses { get; set; }
     public DataContext(DbContextOptions options) : base(options) { }
-/*
-    protected override void onConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlite();
-    }
-*/
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      //modelBuilder.Entity<StudentCourse>()
-        //.HasKey(cs => new { cs.StudentId, cs.CourseId});
+      /*modelBuilder.Entity<StudentCourse>()
+        .HasKey(sc => new { sc.StudentId, sc.CourseId});
+      modelBuilder.Entity<StudentCourse>()
+        .HasOne(sc => sc.Student)
+        .WithMany(s => s.StudentCourses)
+        .HasForeignKey(sc => sc.StudentId);
+      modelBuilder.Entity<StudentCourse>()
+        .HasOne(sc => sc.Course)
+        .WithMany(c => c.StudentCourses)
+        .HasForeignKey(sc => sc.CourseId);*/
       base.OnModelCreating(modelBuilder);
     }
   }
