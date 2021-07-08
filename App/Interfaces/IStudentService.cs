@@ -12,6 +12,6 @@ namespace App.Interfaces
     Task<StudentModel> GetStudentAsync(string studentEmail);
     Task<bool> AddStudent(StudentModel model);
     Task<bool> UpdateStudent(int id, UpdateStudentViewModel model);
-    Task<bool> DeleteStudent(string studentEmail);
+    Task<bool> DeleteStudent(int id);
   }
 }

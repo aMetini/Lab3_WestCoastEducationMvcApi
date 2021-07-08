@@ -21,7 +21,7 @@
        <th>Course Number</th>
        <th>Course Title</th>
        <th>Course Description</th>
-       <th>Course Length</th>
+       <th>Course Length (hrs)</th>
        <th>Category</th>
        <th>Course Level</th>
        <th>Course Price</th>
@@ -35,7 +35,7 @@
       {
           <tr>
             <td style="text-align: center;">
-                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fal fa-edit"></i></a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>
             </td>
             <td>@item.CourseNumber</td>
             <td>@item.Title</td>
@@ -46,10 +46,10 @@
             <td>@item.Price</td>
             <td>@item.Status</td>
             <td style="text-align: center;">
-              <a asp-action="Details" asp-route-courseNo="@item.CourseNumber"><i class="fal fa-info-circle"></i></a>
+              <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"></i></a>
             </td>
             <td style="text-align: center;">
-              <a asp-action="Delete" asp-route-courseNo="@item.CourseNumber"><i class="fal fa-trash-alt" style="color:red;"></i></a>
+              <a asp-action="Delete" asp-route-courseNo="@item.CourseNumber"><i class="fas fa-trash-alt" style="color:red;"></i></a>
             </td>
           </tr>
         }

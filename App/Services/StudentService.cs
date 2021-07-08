@@ -53,11 +53,11 @@ namespace App.Services
       }
     }
 
-    public async Task<bool> DeleteStudent(string studentEmail)
+    public async Task<bool> DeleteStudent(int id)
     {
       try
       {
-        var url = $"{_baseUrl}/{studentEmail}";
+        var url = $"{_baseUrl}/{id}";
         var response = await _http.DeleteAsync(url);
 
         if (response.IsSuccessStatusCode)

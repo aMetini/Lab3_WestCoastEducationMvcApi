@@ -119,14 +119,20 @@ namespace App.Controllers
         public async Task<IActionResult> Details(string studentEmail)
         {
             var result = await _studentservice.GetStudentAsync(studentEmail);
-            if(result != null) return Content($"Student Details: {studentEmail}");
+            if(result != null) return Content($"Student Details: {studentEmail}\n" +
+            $" - First Name: {result.FirstName}\n" +
+            $" - Last Name: {result.LastName}\n" +
+            $" - Mobile Number: {result.MobileNumber}\n" +
+            $" - Address Information: {result.AddressInformation}\n" +
+            $" - Personal Number: {result.PersonalNumber}\n" +
+            $" - Course ID: {result.CourseId}");
 
             return Content($"Unable to find student with email address: {studentEmail}");
         }
 
-        public async Task<IActionResult> Delete(string studentEmail)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (await _studentservice.DeleteStudent(studentEmail)) return RedirectToAction("Index");
+            if (await _studentservice.DeleteStudent(id)) return RedirectToAction("Index");
             return View("Error");
         }
 

@@ -34,7 +34,7 @@
         {
             <tr>
                 <td style="text-align: center;">
-                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fal fa-edit"></i></a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>
                 </td>
                 <td>@item.FirstName</td>
                 <td>@item.LastName</td>
@@ -45,7 +45,7 @@
                 <td>@item.CourseId</td>
                 <td style="text-align: center;"><a asp-action="Details" asp-route-studentEmail="@item.Email"><i class="fas fa-info-circle"></i></a></td>
 
-                <td style="text-align: center;"><a asp-action="Delete" asp-route-studentEmail="@item.Email"><i style="color: red;" class="fas fa-trash-alt"></i></a></td>
+                <td style="text-align: center;"><a asp-action="Delete" asp-route-id="@item.Id"><i style="color: red;" class="fas fa-trash-alt"></i></a></td>
             </tr>       
         }
     </tbody>

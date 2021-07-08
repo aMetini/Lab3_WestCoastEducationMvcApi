@@ -11,7 +11,7 @@ namespace App.ViewModels
     public string Title { get; set; }
     [Display(Name = "Course Description")]
     public string Description { get; set; }
-    [Display(Name = "Course Length")]
+    [Display(Name = "Course Length (hrs)")]
     public int Length { get; set; }
     [Display(Name = "Image Name")]
     public string ImageName { get; set; }

@@ -127,12 +127,20 @@ namespace App.Controllers
       }
     }
 
-    public async Task<IActionResult> Details(int courseNo)
+    public async Task<IActionResult> Details(int id)
     {
-      var result = await _service.GetCourseAsync(courseNo);
-      if (result != null) return Content($"Course with course number {courseNo}");
+      var result = await _service.GetCourseAsync(id);
+      if (result != null) return Content($"Course with Course ID {id}\n" +
+            $" - Course Number:  {result.CourseNumber}\n" +
+            $" - Title: {result.Title}\n" +
+            $" - Category: {result.Category}\n" +
+            $" - Level: {result.CourseLevel}\n" +
+            $" - Description: {result.Description}\n" +
+            $" - Length: {result.Length}\n" +
+            $" - Price: {result.Price}\n" +
+            $" - Status: {result.Status}");
 
-      return Content($"Could not find course with course number {courseNo}");
+      return Content($"Could not find course with Course ID {id}");
     }
 
     public async Task<IActionResult> Delete(int courseNo)
