@@ -30,10 +30,10 @@ namespace Api.Data
       return await _context.Courses./*Include(c => c.Title).*/FindAsync(id);
     }
 
-    public async Task<Course> GetCourseByCourseNoAsync(string courseNo)
+    public async Task<Course> GetCourseByCourseNoAsync(int courseNo)
     {
       var course = await _context.Courses/*.Include(c => c.Title)*/.SingleOrDefaultAsync(
-          c => c.CourseNumber.ToUpper() == courseNo.ToUpper());
+          c => c.CourseNumber == courseNo);
 
       return course;
     }

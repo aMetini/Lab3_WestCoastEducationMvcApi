@@ -6,7 +6,7 @@ namespace App.ViewModels
   {
     public int Id { get; set; }
     [Display(Name = "Course Number")]
-    public string CourseNumber { get; set; }
+    public int CourseNumber { get; set; }
     [Display(Name = "Course Title")]
     public string Title { get; set; }
     [Display(Name = "Course Description")]

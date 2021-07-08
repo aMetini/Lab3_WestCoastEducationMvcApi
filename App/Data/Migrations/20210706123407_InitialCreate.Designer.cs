@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace App.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210623080253_InitialCreate")]
+    [Migration("20210706123407_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,8 +29,8 @@ namespace App.Data.Migrations
                     b.Property<string>("CourseLevel")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CourseNumber")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CourseNumber")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
@@ -41,8 +41,8 @@ namespace App.Data.Migrations
                     b.Property<int>("Length")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("INTEGER");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Status")
                         .HasColumnType("TEXT");
@@ -55,6 +55,20 @@ namespace App.Data.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("App.Entities.CourseTitle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CourseTitles");
+                });
+
             modelBuilder.Entity("App.Entities.Student", b =>
                 {
                     b.Property<int>("Id")
@@ -63,6 +77,9 @@ namespace App.Data.Migrations
 
                     b.Property<string>("AddressInformation")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
                         .HasColumnType("TEXT");
@@ -73,11 +90,11 @@ namespace App.Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MobileNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("MobileNumber")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("PersonalNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PersonalNumber")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

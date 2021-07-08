@@ -17,5 +17,8 @@ namespace App.ViewModels
     public string AddressInformation { get; set; }
     [Display(Name = "Personal Number")]
     public string PersonalNumber { get; set; }
+    [Display(Name = "Last Name")]
+    public int CourseId { get; set; }
+
   }
 }

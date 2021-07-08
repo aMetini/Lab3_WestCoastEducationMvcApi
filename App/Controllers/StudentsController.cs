@@ -53,7 +53,8 @@ namespace App.Controllers
                 Email = data.Email,
                 MobileNumber = data.MobileNumber,
                 AddressInformation = data.AddressInformation,
-                PersonalNumber = data.PersonalNumber
+                PersonalNumber = data.PersonalNumber,
+                CourseId = data.CourseId
             };
             try
             {
@@ -80,7 +81,8 @@ namespace App.Controllers
                 Email = student.Email,
                 MobileNumber = student.MobileNumber,
                 AddressInformation = student.AddressInformation,
-                PersonalNumber = student.PersonalNumber
+                PersonalNumber = student.PersonalNumber,
+                CourseId = student.CourseId
             };
             return View("Edit", model);
         }
@@ -98,7 +100,9 @@ namespace App.Controllers
                     LastName = data.LastName,
                     Email = data.Email,
                     MobileNumber = data.MobileNumber,
-                    AddressInformation = data.AddressInformation
+                    AddressInformation = data.AddressInformation,
+                    PersonalNumber = data.PersonalNumber,
+                    CourseId = data.CourseId
                 };
 
                 if (await _studentservice.UpdateStudent(data.Id, studentModel)) return RedirectToAction("Index");

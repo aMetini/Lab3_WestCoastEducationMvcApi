@@ -37,18 +37,19 @@ namespace Api.Controllers
           Email = s.Email,
           MobileNumber = (string)s.MobileNumber,
           AddressInformation = s.AddressInformation,
-          PersonalNumber = (string)s.PersonalNumber
+          PersonalNumber = (string)s.PersonalNumber,
+          CourseId = s.CourseId
         });
       }
       return Ok(students);
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetStudentByPersonalNumber(string personalNo)
+    public async Task<IActionResult> GetStudentById(int id)
     {
       try
       {
-        var student = await _studentrepo.GetStudentByPersonalNumberAsync(personalNo);
+        var student = await _studentrepo.GetStudentByIdAsync(id);
 
         if (student == null) return NotFound();
 
@@ -60,7 +61,9 @@ namespace Api.Controllers
           Email = student.Email,
           MobileNumber = (string)student.MobileNumber,
           AddressInformation = student.AddressInformation,
-          PersonalNumber = (string)student.PersonalNumber
+          PersonalNumber = (string)student.PersonalNumber,
+          CourseId = student.CourseId
+          
         };
 
         return Ok(model);
@@ -88,7 +91,8 @@ namespace Api.Controllers
           Email = student.Email,
           MobileNumber = (string)student.MobileNumber,
           AddressInformation = student.AddressInformation,
-          PersonalNumber = (string)student.PersonalNumber
+          PersonalNumber = (string)student.PersonalNumber,
+          CourseId = student.CourseId
         };
 
         return Ok(model);
@@ -113,7 +117,8 @@ namespace Api.Controllers
           Email = model.Email,
           MobileNumber = model.MobileNumber,
           AddressInformation = model.AddressInformation,
-          PersonalNumber = model.PersonalNumber
+          PersonalNumber = model.PersonalNumber,
+          CourseId = model.CourseId
         };
         await _studentrepo.AddAsync(student);
 
@@ -128,10 +133,10 @@ namespace Api.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateStudent(string personalNo, UpdateStudentViewModel model)
+    public async Task<IActionResult> UpdateStudent(int id, UpdateStudentViewModel model)
     {
 
-      var student = await _studentrepo.GetStudentByPersonalNumberAsync(personalNo);
+      var student = await _studentrepo.GetStudentByIdAsync(id);
 
       student.Email = model.Email;
       student.FirstName = model.FirstName;
@@ -139,6 +144,7 @@ namespace Api.Controllers
       student.MobileNumber = model.MobileNumber;
       student.AddressInformation = model.AddressInformation;
       student.PersonalNumber = model.PersonalNumber;
+      student.CourseId = model.CourseId;
 
       _studentrepo.Update(student);
       var result = await _studentrepo.SaveAllChangesAsync();
@@ -146,12 +152,12 @@ namespace Api.Controllers
       return NoContent();
     }
 
-    [HttpDelete("{personalNo}")]
-    public async Task<IActionResult> DeleteStudent(string personalNo)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteStudent(int id)
     {
       try
       {
-        var student = await _studentrepo.GetStudentByPersonalNumberAsync(personalNo);
+        var student = await _studentrepo.GetStudentByIdAsync(id);
         if (student == null) return NotFound();
 
         _studentrepo.Delete(student);

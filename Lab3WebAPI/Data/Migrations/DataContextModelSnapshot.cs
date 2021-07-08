@@ -27,8 +27,8 @@ namespace Lab3WebAPI.Data.Migrations
                     b.Property<string>("CourseLevel")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CourseNumber")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CourseNumber")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
@@ -39,8 +39,8 @@ namespace Lab3WebAPI.Data.Migrations
                     b.Property<int>("Length")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("INTEGER");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Status")
                         .HasColumnType("TEXT");
@@ -74,11 +74,11 @@ namespace Lab3WebAPI.Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MobileNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("MobileNumber")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("PersonalNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PersonalNumber")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -89,13 +89,13 @@ namespace Lab3WebAPI.Data.Migrations
 
             modelBuilder.Entity("Api.Entities.Student", b =>
                 {
-                    b.HasOne("Api.Entities.Course", "Course")
+                    b.HasOne("Api.Entities.Course", "CourseNumber")
                         .WithMany("Students")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Course");
+                    b.Navigation("CourseNumber");
                 });
 
             modelBuilder.Entity("Api.Entities.Course", b =>

@@ -53,7 +53,7 @@ namespace App.Services
       }
     }
 
-    public async Task<bool> DeleteCourse(string courseNo)
+    public async Task<bool> DeleteCourse(int courseNo)
     {
       try
       {
@@ -92,7 +92,7 @@ namespace App.Services
       }
     }
 
-    public async Task<CourseModel> GetCourseAsync(string courseNo)
+    public async Task<CourseModel> GetCourseByCourseNoAsync(int courseNo)
     {
       var response = await _http.GetAsync($"{_baseUrl}/find/{courseNo}");
 

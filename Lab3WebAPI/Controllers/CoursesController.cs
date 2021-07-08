@@ -80,7 +80,7 @@ namespace Api.Controllers
     }
 
     [HttpGet("find/{courseno}")]
-    public async Task<IActionResult> GetCourseByCourseNo(string courseno)
+    public async Task<IActionResult> GetCourseByCourseNo(int courseno)
     {
       try
       {
@@ -167,7 +167,7 @@ namespace Api.Controllers
     }
 
     [HttpDelete("{courseNo}")]
-    public async Task<IActionResult> DeleteCourse(string courseNo)
+    public async Task<IActionResult> DeleteCourse(int courseNo)
     {
       try
       {

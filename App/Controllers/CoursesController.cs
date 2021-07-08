@@ -29,7 +29,7 @@ namespace App.Controllers
 
       if(!string.IsNullOrEmpty(searchString))
       {
-        var resultFiltered = result.Where(c => c.CourseNumber.Contains(searchString));
+        var resultFiltered = result.Where(c => c.CourseNumber == int.Parse(searchString));
         return View("Index", resultFiltered);
       } 
       return View("Index", result);
@@ -127,7 +127,7 @@ namespace App.Controllers
       }
     }
 
-    public async Task<IActionResult> Details(string courseNo)
+    public async Task<IActionResult> Details(int courseNo)
     {
       var result = await _service.GetCourseAsync(courseNo);
       if (result != null) return Content($"Course with course number {courseNo}");
@@ -135,7 +135,7 @@ namespace App.Controllers
       return Content($"Could not find course with course number {courseNo}");
     }
 
-    public async Task<IActionResult> Delete(string courseNo)
+    public async Task<IActionResult> Delete(int courseNo)
     {
       if (await _service.DeleteCourse(courseNo)) return RedirectToAction("Index");
       return View("Error");

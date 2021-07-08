@@ -27,8 +27,8 @@ namespace App.Data.Migrations
                     b.Property<string>("CourseLevel")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CourseNumber")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CourseNumber")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
@@ -39,8 +39,8 @@ namespace App.Data.Migrations
                     b.Property<int>("Length")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("INTEGER");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Status")
                         .HasColumnType("TEXT");
@@ -76,6 +76,9 @@ namespace App.Data.Migrations
                     b.Property<string>("AddressInformation")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("CourseId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
@@ -85,11 +88,11 @@ namespace App.Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MobileNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("MobileNumber")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("PersonalNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PersonalNumber")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

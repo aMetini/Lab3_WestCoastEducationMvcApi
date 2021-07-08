@@ -22,5 +22,8 @@ namespace App.ViewModels
     [Display(Name = "Personal Number")]
     [Required(ErrorMessage = "Personal number must be indicated!")]
     public string PersonalNumber{ get; set; }
+    [Display(Name = "Course Number")]
+    [Required(ErrorMessage = "Course Number must be indicated!")]
+    public int CourseId { get; set; }
   }
 }

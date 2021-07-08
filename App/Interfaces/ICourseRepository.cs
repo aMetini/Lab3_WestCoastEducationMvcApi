@@ -8,7 +8,7 @@ namespace App.Interfaces
   {
     void Add(Course course);
     Task<IEnumerable<Course>> GetCoursesAsync();
-    Task<Course> GetCourseByCourseNoAsync(string courseNo);
+    Task<Course> GetCourseByCourseNoAsync(int courseNo);
     Task<Course> GetCourseByIdAsync(int id);
     void Update(Course course);
     void Delete(Course course);

@@ -25,14 +25,14 @@ namespace Api.Data
       _context.Students.Remove(student);
     }
 
-    public async Task<Student> GetStudentByPersonalNumberAsync(string personalNo)
+    public async Task<Student> GetStudentByIdAsync(int id)
     {
-      return await _context.Students/*.Include(c => c.CourseNumber)*/.SingleOrDefaultAsync(c => c.PersonalNumber == personalNo);
+      return await _context.Students.Include(c => c.Course).SingleOrDefaultAsync(c => c.Id == id);
     }
 
     public async Task<Student> GetStudentByEmailAsync(string studentEmail)
     {
-      var student = await _context.Students/*.Include(c => c.CourseNumber)*/.SingleOrDefaultAsync(
+      var student = await _context.Students.Include(c => c.Course).SingleOrDefaultAsync(
           c => c.Email.ToLower() == studentEmail.ToLower());
 
       return student;
@@ -40,7 +40,7 @@ namespace Api.Data
 
     public async Task<IEnumerable<Student>> GetStudentsAsync()
     {
-      return await _context.Students/*Include(c => c.CourseNumber)*/.ToListAsync();
+      return await _context.Students.Include(c => c.Course).ToListAsync();
     }
 
     public async Task<bool> SaveAllChangesAsync()

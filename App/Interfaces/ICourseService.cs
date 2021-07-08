@@ -9,9 +9,9 @@ namespace App.Interfaces
   {
     Task<List<CourseModel>> GetCoursesAsync();
     Task<CourseModel> GetCourseAsync(int id);
-    Task<CourseModel> GetCourseAsync(string courseNo);
+    Task<CourseModel> GetCourseByCourseNoAsync(int courseNo);
     Task<bool> AddCourse(CourseModel model);
     Task<bool> UpdateCourse(int id, UpdateCourseViewModel model);
-    Task<bool> DeleteCourse(string courseNo);
+    Task<bool> DeleteCourse(int courseNo);
   }
 }

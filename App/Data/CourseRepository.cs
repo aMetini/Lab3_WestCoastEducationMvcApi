@@ -25,9 +25,9 @@ namespace App.Data
     {
       return await _context.Courses.FindAsync(id);
     }
-    public async Task<Course> GetCourseByCourseNoAsync(string courseNo)
+    public async Task<Course> GetCourseByCourseNoAsync(int courseNo)
     {
-      return await _context.Courses.SingleOrDefaultAsync(c => c.CourseNumber.ToLower() == courseNo.ToLower());
+      return await _context.Courses.SingleOrDefaultAsync(c => c.CourseNumber == courseNo);
     }
     public async Task<IEnumerable<Course>> GetCoursesAsync()
     {
