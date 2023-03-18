@@ -1,6 +1,7 @@
 namespace App.Models
 {
-  public class StudentModel
+    // Student model defines properties and/or methods of a Student object
+    public class StudentModel
   {
     public int Id { get; set; }
     public string FirstName { get; set; }

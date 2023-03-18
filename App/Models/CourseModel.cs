@@ -1,5 +1,6 @@
 namespace App.Models
 {
+    // Course model defines properties and/or methods of a Course object
   public class CourseModel
   {
     public int Id { get; set; }

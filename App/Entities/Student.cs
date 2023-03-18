@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 namespace App.Entities
 {
+    // Student entity defining a single instance of object saved into the database. 
     public class Student
     {
         public int Id { get; set; }

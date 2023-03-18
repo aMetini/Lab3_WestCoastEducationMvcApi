@@ -2,7 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace App.ViewModels
 {
-  public class RegisterCourseViewModel
+    // This view model class consists of all properties required by the Create view in the Courses Page.
+    public class RegisterCourseViewModel
     {
     [Display(Name = "Id")]
     [Required(ErrorMessage = "Id must be indicated!")]

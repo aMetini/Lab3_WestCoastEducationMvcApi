@@ -4,6 +4,7 @@ using App.Entities;
 
 namespace App.Interfaces
 {
+    // This interface repository stores/accesses data for the Student entity
   public interface IStudentRepository
   {
     void Add(Student student);

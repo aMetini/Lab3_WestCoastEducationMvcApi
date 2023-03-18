@@ -2,7 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace App.ViewModels
 {
-  public class EditStudentViewModel
+    // This view model class consists of all properties required by the Edit view in the Student Page.
+    public class EditStudentViewModel
   {
     public int Id { get; set; }
     [Display(Name = "First Name")]

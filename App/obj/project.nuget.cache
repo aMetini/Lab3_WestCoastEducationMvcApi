@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3JoTH97aGSXR9OQ3oCi1m/g9OixUYAm4wfScM6Y3J9u4NLpgcWSuyfj+EgN9y8NjF+MJ7AOxDnwC0vkB4jKHxw==",
+  "dgSpecHash": "p4Y4vp9EQo7biTtAoXbuXF1Z1Zr1dyB1YuMDID3D7hTYoUpy3lw64TJ+heSkTwt+qqmShLY26kbW0UPNP3qH2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amber\\Lab3_WestCoastCollege_MVC\\app\\App.csproj",
+  "projectFilePath": "C:\\Users\\amber\\WestCoastEducationMvcApi\\App\\App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amber\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\amber\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

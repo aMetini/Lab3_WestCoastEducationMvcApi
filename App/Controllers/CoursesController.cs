@@ -13,6 +13,7 @@ namespace App.Controllers
 {
   public class CoursesController : Controller
   {
+    // Private readonly instances of interfaces IUnitOfWork and ICourseService
     private readonly IUnitOfWork _unitOfWork;
     private readonly ICourseService _service;
     public CoursesController(IUnitOfWork unitOfWork, ICourseService service)

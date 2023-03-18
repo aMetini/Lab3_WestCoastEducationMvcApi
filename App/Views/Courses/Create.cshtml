@@ -2,11 +2,13 @@
     ViewData["Title"] = "Course Registration";
 }
 
+<!--References the RegisterCourseViewModel-->
 @model App.ViewModels.RegisterCourseViewModel
 
 @* Steg 2. *@
 <h1>Register for your course now!</h1>
 
+<!--HTML validation to render view from view model-->
 @Html.ValidationSummary()
 
 @* Steg 4. Create a form *@

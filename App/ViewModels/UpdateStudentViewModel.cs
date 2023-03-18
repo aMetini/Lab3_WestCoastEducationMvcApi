@@ -1,6 +1,7 @@
 namespace App.ViewModels
 {
-  public class UpdateStudentViewModel
+    // This view model class consists of all properties required to update Index View in Student Page.
+    public class UpdateStudentViewModel
   {
     public string FirstName { get; set; }
     public string LastName { get; set; }

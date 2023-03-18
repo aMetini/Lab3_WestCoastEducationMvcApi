@@ -5,7 +5,8 @@ using App.ViewModels;
 
 namespace App.Interfaces
 {
-  public interface ICourseService
+    // This interface service manipulates the data that it has access to using the Course Model and UpdateCourseViewModel
+    public interface ICourseService
   {
     Task<List<CourseModel>> GetCoursesAsync();
     Task<CourseModel> GetCourseAsync(int id);

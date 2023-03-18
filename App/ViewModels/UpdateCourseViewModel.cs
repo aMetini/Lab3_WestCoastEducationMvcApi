@@ -1,6 +1,7 @@
 namespace App.ViewModels
 {
-  public class UpdateCourseViewModel
+    // This view model class consists of all properties required to update Index View in Courses Page.
+    public class UpdateCourseViewModel
   {
     public int CourseNumber { get; set; }
     public string Title { get; set; }

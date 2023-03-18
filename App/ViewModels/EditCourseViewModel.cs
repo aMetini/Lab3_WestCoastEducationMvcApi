@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace App.ViewModels
 {
+    // This view model class consists of all properties required by the Edit view in the Courses Page.
   public class EditCourseViewModel
   {
     public int Id { get; set; }
